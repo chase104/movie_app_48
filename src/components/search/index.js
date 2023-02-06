@@ -11,6 +11,8 @@ const Search = (props) => {
     const [searchString, setSearchString] = useState('');
 
     useEffect(() => {
+        // make this movie call randomly choose between 10 movies
+        console.log("making api call");
         makeServerCall("Pacific Rim")
     }, []);
     // listen for submit and make call to server
@@ -30,7 +32,7 @@ const Search = (props) => {
         });
         console.log(serverResponse);
         setSearchString('');
-        setSearchedMovie(serverResponse.data)
+        setSearchedMovie(serverResponse.data);
     }
 
     const handleSubmit = (e) => {
