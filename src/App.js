@@ -6,7 +6,6 @@ import DisplayMovie from './components/display_movie';
 function App() {
 
   const [searchedMovie, setSearchedMovie] = useState(null);
-  console.log({searchedMovie});
 
   const logString = (string) => {
     console.log("string is in APP", string);
