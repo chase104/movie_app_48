@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DisplayMovie = (props) => {
-  let { searchedMovie } = props;
+  let { searchedMovie, movieArray, setMovieArray } = props;
   console.log(searchedMovie, "FROM DISPLAY_MOVIE");
 
   const returnMovieJSX = () => {
@@ -24,8 +24,17 @@ const DisplayMovie = (props) => {
     }
   }
 
+const handleClick = () => {
+  console.log('clicked');
+  // add title of current movie to that array (push it)
+  setMovieArray([...movieArray, searchedMovie.Title])
+}
+
   return (
-    <section>
+    <section 
+      style={{borderBottom: "4px solid black", marginBottom: "20px", paddingBottom: "12px"}} 
+      onClick={() => handleClick()}
+    >
       { returnMovieJSX() }
     </section>
   )
