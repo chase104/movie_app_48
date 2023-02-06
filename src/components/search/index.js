@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
 
@@ -7,13 +7,18 @@ const Search = (props) => {
     let user = props.user;
 
     let { logString } = props;
+
+    let isFirstRender = useRef(true);
     // logString("This string is from Search Child Component!")
     const [searchString, setSearchString] = useState('');
 
     useEffect(() => {
         // make this movie call randomly choose between 10 movies
-        console.log("making api call");
-        makeServerCall("Pacific Rim")
+        if (isFirstRender.current === true) {
+            console.log("making api call");
+            isFirstRender.current = false;
+            makeServerCall("Pacific Rim")
+        }
     }, []);
     // listen for submit and make call to server
 
