@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Search from './components/search';
 import DisplayMovie from './components/display_movie';
