@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const Search = () => {
 
+const Search = (props) => {
+    let {setSearchedMovie} = props;
+    let user = props.user;
+
+    let { logString } = props;
+    logString("This string is from Search Child Component!")
+    console.log(user);
     const [searchString, setSearchString] = useState('');
-    const [searchedMovie, setSearchedMovie] = useState(null);
 
-    console.log({searchedMovie});
     // listen for submit and make call to server
 
     const handleChange = (e) => {
@@ -42,7 +46,6 @@ const Search = () => {
                 placeholder="movie name" 
                 onChange={(event) => handleChange(event)}
             />
-        
             <button type="">click me!</button>
         </form>
     </section>
