@@ -33,7 +33,7 @@ const Search = (props) => {
     const makeServerCall = async (string) => {
         let serverResponse = await axios({
             method: 'GET',
-            url: `/get_movie/${string}`
+            url: `http://localhost:5000/get_movie/${string}`
         });
         console.log(serverResponse);
         setSearchString('');
