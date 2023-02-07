@@ -12,7 +12,9 @@ const DisplayMovie = (props) => {
         <h4>{searchedMovie.Title}</h4>
         <p>{searchedMovie.Plot}</p>
       {/* check if posterURL exists */}
-        <img src={searchedMovie.Poster} alt="" />
+      {searchedMovie.Poster.toLowerCase() === "n/a" ? 
+      <div></div> 
+      : <img src={searchedMovie.Poster} alt="Moive Poster" />}
       </div>
       )
     } else {

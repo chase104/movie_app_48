@@ -41,7 +41,7 @@ const Search = (props) => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         console.log("submitting!");
         // if we don't prevent the default, the page will refresh
         // call express server with the string

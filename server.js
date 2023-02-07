@@ -2,10 +2,13 @@ const express = require('express');
 require('dotenv').config()
 const axios = require('axios');
 const cors = require('cors')
+
+
 const app = express();
 
 // console.log(process.env.API_KEY);
 app.use(cors('*/*'))
+
 app.get('/get_movie/:movieString', async (req, res) => {
     console.log(req.params.movieString);
 
@@ -15,6 +18,8 @@ app.get('/get_movie/:movieString', async (req, res) => {
     console.log(data);
     res.json(data);
 });
+
+// NOT SERVING THE REACT APP FROM SERVER RIGHT NOW
 
 
 app.listen(5000, () => {
