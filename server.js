@@ -1,7 +1,9 @@
 const express = require('express');
-require('dotenv').config()
+require('dotenv').config();
 const axios = require('axios');
-const cors = require('cors')
+const cors = require('cors');
+const path = require('path');
+
 
 
 const app = express();
@@ -9,6 +11,11 @@ const app = express();
 // console.log(process.env.API_KEY);
 app.use(cors('*/*'))
 
+// SERVE THE REACT APP FROM SERVER
+
+app.use(express.static(path.join(__dirname, 'build')))
+
+// ROUTES //
 app.get('/get_movie/:movieString', async (req, res) => {
     console.log(req.params.movieString);
 
@@ -18,8 +25,10 @@ app.get('/get_movie/:movieString', async (req, res) => {
     console.log(data);
     res.json(data);
 });
+// END ROUTES //
 
-// NOT SERVING THE REACT APP FROM SERVER RIGHT NOW
+ 
+
 
 
 app.listen(5000, () => {
