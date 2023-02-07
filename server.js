@@ -13,7 +13,7 @@ app.use(cors('*/*'))
 
 // SERVE THE REACT APP FROM SERVER
 
-app.use(express.static(path.join(__dirname, 'build')))
+app.use(express.static(path.join(__dirname, 'build')));
 
 // ROUTES //
 app.get('/get_movie/:movieString', async (req, res) => {
