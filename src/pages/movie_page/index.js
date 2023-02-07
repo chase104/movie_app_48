@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Search from '../../components/search';
 import DisplayMovie from '../../components/display_movie';
 import FavoriteMovies from '../../components/favorite_movies';
+import MovieRatings from '../../components/movie_ratings';
 
 
 const MoviePage = () => {
@@ -20,7 +21,10 @@ const MoviePage = () => {
             movieArray={movieArray} 
             setMovieArray={setMovieArray} 
         />
+        {/* display the ratings (map through) */}
+        <MovieRatings searchedMovie={searchedMovie} /> 
         <FavoriteMovies movieArray={movieArray} />
+     
     </div>
   )
 }
